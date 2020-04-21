@@ -14,10 +14,12 @@ class Player
   def gets_damage(number_of_damages)
     
     @life_points = @life_points - number_of_damages
+
+    puts "#{compute_damage} points de dommage lui sont infligés"
     if @life_points <= 0 
-        puts "#{compute_damage} points de dommage lui sont infligés"
-        puts "le joueur a été tué !"
+      puts "le joueur a été tué !"
     end
+    
   end
 
   def attacks(player)
@@ -42,7 +44,7 @@ class HumanPlayer < Player
   end
 
   def show_state
-    puts "#{@name} a #{@life_points} points de vie et une arme niveau #{weapon_level} "
+    "#{@name} a #{@life_points} points de vie et une arme niveau #{weapon_level} "
   end
 
   def compute_damage
